@@ -12,7 +12,7 @@ public class Book implements Serializable{
 	private String description;	// 설명
 	private String publisher;	// 출판사
 	private String category;	// 분류
-	private long unitInStock;	// 재고개수
+	private long unitsInStock;	// 재고개수
 	private String releaseDate;	// 출판일(월/년)
 	private String condition;	// 신제품 or 구제품 or 리퍼브제품
 	
@@ -83,12 +83,12 @@ public class Book implements Serializable{
 		this.category = category;
 	}
 
-	public long getUnitInStock() {
-		return unitInStock;
+	public long getUnitsInStock() {
+		return unitsInStock;
 	}
 
-	public void setUnitInStock(long unitInStock) {
-		this.unitInStock = unitInStock;
+	public void setUnitsInStock(long unitsInStock) {
+		this.unitsInStock = unitsInStock;
 	}
 
 	public String getReleaseDate() {

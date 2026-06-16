@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" import="dto.Book"%>
+    pageEncoding="UTF-8" import="dto.Book, dao.BookRepository"%>
 <!DOCTYPE html>
 
 <jsp:useBean id="bookDAO" class="dao.BookRepository" scope="session"/>
@@ -21,6 +21,7 @@
 	
 	<%
 		String id=request.getParameter("id");
+		BookRepository dao=BookRepository.getInstance();
 		Book book=bookDAO.getBookById(id);
 	%>
 	<div class="row align-item-md-stretch">
@@ -33,7 +34,7 @@
 				<p> <b>출판사</b> : <%=book.getPublisher() %>
 				<p> <b>출판일</b> : <%=book.getReleaseDate() %>
 				<p> <b>분류</b> : <%=book.getCategory() %>
-				<p> <b>재고수</b> : <%=book.getUnitInStock() %>
+				<p> <b>재고수</b> : <%=book.getUnitsInStock() %>
 				<h4><%=book.getUnitPrice() %>원</h4>
 				<p> <a href="#" class="btn btn-info"> 도서주문 &raquo;</a>
 				<a href="./book.jsp" class="btn btn-secondary"> 도서목록 &raquo;</a>
